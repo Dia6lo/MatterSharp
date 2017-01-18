@@ -1,5 +1,4 @@
 ﻿using System;
-using Newtonsoft.Json;
 
 namespace MatterSharp
 {
@@ -7,13 +6,10 @@ namespace MatterSharp
     {
         public string Id { get; set; }
 
-        [JsonConverter(typeof(UnixEpochConverter))]
         public DateTime CreateAt { get; set; }
 
-        [JsonConverter(typeof(UnixEpochConverter))]
         public DateTime UpdateAt { get; set; }
 
-        [JsonConverter(typeof(UnixEpochConverter))]
         public DateTime DeleteAt { get; set; }
 
         public string Username { get; set; }
@@ -38,16 +34,12 @@ namespace MatterSharp
 
         public string Locale { get; set; }
 
-        // TODO
         public object NotifyProps { get; set; }
 
-        // TODO
         public object Props { get; set; }
 
-        [JsonConverter(typeof(UnixEpochConverter))]
         public DateTime LastPasswordUpdate { get; set; }
 
-        [JsonConverter(typeof(UnixEpochConverter))]
         public DateTime LastPictureUpdate { get; set; }
 
         public int FailedAttempts { get; set; }

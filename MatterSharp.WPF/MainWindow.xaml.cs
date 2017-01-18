@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Navigation;
 
@@ -29,8 +30,12 @@ namespace MatterSharp.WPF
 
         private void MainAction(string token)
         {
-            var client = new MattermostClient(uri, token);
-            var user = client.GetCurrentUser();
+            var client = new MattermostRestClient(uri, token);
+            var teams = client.GetAllTeams();
+            var team = teams.First().Value;
+            var channels = client.GetAllChannels(team.Id);
+            var channel = channels.Channels.Find(c => c.DisplayName == "test");
+            var posts = client.GetPostsForAChannel(team.Id, channel.Id, 0, 100);
         }
     }
 }

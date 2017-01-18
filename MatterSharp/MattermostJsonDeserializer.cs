@@ -9,6 +9,7 @@ namespace MatterSharp
     {
         private static readonly JsonSerializerSettings settings = new JsonSerializerSettings
         {
+            Converters = new [] { new UnixEpochConverter() },
             ContractResolver = new DefaultContractResolver
             {
                 NamingStrategy = new SnakeCaseNamingStrategy()

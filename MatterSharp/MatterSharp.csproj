@@ -48,9 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MattermostClient.cs" />
+    <Compile Include="Channel.cs" />
+    <Compile Include="MattermostRestClient.cs" />
     <Compile Include="MattermostJsonDeserializer.cs" />
+    <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Team.cs" />
     <Compile Include="UnixEpochConverter.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
