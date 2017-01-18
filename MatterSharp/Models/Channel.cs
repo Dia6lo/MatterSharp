@@ -4,6 +4,8 @@ namespace MatterSharp.Models
 {
     public class Channel
     {
+        public Channel() { }
+
         public Channel(Rest.Models.Channel channel)
         {
             Id = channel.Id;

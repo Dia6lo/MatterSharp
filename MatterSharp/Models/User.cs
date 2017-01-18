@@ -4,6 +4,8 @@ namespace MatterSharp.Models
 {
     public class User
     {
+        public User() { }
+
         public User(Rest.Models.User user)
         {
             Id = user.Id;

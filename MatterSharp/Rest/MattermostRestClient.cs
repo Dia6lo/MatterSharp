@@ -39,10 +39,22 @@ namespace MatterSharp.Rest
             return ExecuteAsync<User>(request);
         }
 
+        public Task<User> GetUserAsync(string id)
+        {
+            var request = new RestRequest($"users/{id}/get", Method.GET);
+            return ExecuteAsync<User>(request);
+        }
+
         public Task<Dictionary<string, Team>> GetAllTeamsAsync()
         {
             var request = new RestRequest("teams/all", Method.GET);
             return ExecuteAsync<Dictionary<string, Team>>(request);
+        }
+
+        public Task<Team> GetTeamAsync(string id)
+        {
+            var request = new RestRequest($"teams/{id}/me", Method.GET);
+            return ExecuteAsync<Team>(request);
         }
 
         public Task<ChannelsOfTeam> GetAllChannelsAsync(string teamId)
@@ -51,10 +63,22 @@ namespace MatterSharp.Rest
             return ExecuteAsync<ChannelsOfTeam>(request);
         }
 
+        public Task<Channel> GetChannelAsync(string teamId, string id)
+        {
+            var request = new RestRequest($"teams/{teamId}/channels/{id}", Method.GET);
+            return ExecuteAsync<Channel>(request);
+        }
+
         public Task<PostsOfChannel> GetPostsForChannelAsync(string teamId, string channelId, int offset, int limit)
         {
             var request = new RestRequest($"teams/{teamId}/channels/{channelId}/posts/page/{offset}/{limit}", Method.GET);
             return ExecuteAsync<PostsOfChannel>(request);
+        }
+
+        public Task<Post> GetPostAsync(string teamId, string channelId, string id)
+        {
+            var request = new RestRequest($"teams/{teamId}/channels/{channelId}/posts/{id}/get", Method.GET);
+            return ExecuteAsync<Post>(request);
         }
     }
 }

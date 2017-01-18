@@ -5,6 +5,8 @@ namespace MatterSharp.Models
 {
     public class Post
     {
+        public Post() { }
+
         public Post(Rest.Models.Post post)
         {
             Id = post.Id;

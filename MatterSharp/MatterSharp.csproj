@@ -48,6 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\MattermostContext.cs" />
+    <Compile Include="Context\Models\Channel.cs" />
+    <Compile Include="Context\Models\IReferenceFetcher.cs" />
+    <Compile Include="Context\Models\Post.cs" />
+    <Compile Include="Context\Models\Team.cs" />
+    <Compile Include="Context\Models\User.cs" />
+    <Compile Include="Context\Repository.cs" />
+    <Compile Include="Context\SimpleRepository.cs" />
     <Compile Include="Models\Channel.cs" />
     <Compile Include="MattermostClient.cs" />
     <Compile Include="Models\ChannelType.cs" />

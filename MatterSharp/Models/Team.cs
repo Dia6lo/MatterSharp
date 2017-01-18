@@ -4,6 +4,8 @@ namespace MatterSharp.Models
 {
     public class Team
     {
+        public Team() { }
+
         public Team(Rest.Models.Team team)
         {
             Id = team.Id;

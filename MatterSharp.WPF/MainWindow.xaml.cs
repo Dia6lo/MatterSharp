@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
+using MatterSharp.Context;
 
 namespace MatterSharp.WPF
 {
@@ -31,7 +32,7 @@ namespace MatterSharp.WPF
 
         private async Task MainAction(string token)
         {
-            var client = new MattermostClient(uri, token);
+            var client = new MattermostContext(uri, token);
             var user = await client.GetCurrentUserAsync();
             var teams = await client.GetAllTeamsAsync();
             var team = teams.First();
