@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using MatterSharp.Rest.Models;
 using RestSharp;
 
-namespace MatterSharp
+namespace MatterSharp.Rest
 {
     public class MattermostRestClient
     {
@@ -24,35 +26,35 @@ namespace MatterSharp
             this.token = token;
         }
 
-        private T Execute<T>(IRestRequest request) where T: new()
+        private async Task<T> ExecuteAsync<T>(IRestRequest request) where T: new()
         {
             request.AddParameter("Authorization", $"Bearer {token}", ParameterType.HttpHeader);
-            var result = restClient.Execute<T>(request);
-            return result.Data;
+            var response = await restClient.ExecuteTaskAsync<T>(request);
+            return response.Data;
         }
 
-        public User GetCurrentUser()
+        public Task<User> GetCurrentUserAsync()
         {
             var request = new RestRequest("users/me", Method.GET);
-            return Execute<User>(request);
+            return ExecuteAsync<User>(request);
         }
 
-        public Dictionary<string, Team> GetAllTeams()
+        public Task<Dictionary<string, Team>> GetAllTeamsAsync()
         {
             var request = new RestRequest("teams/all", Method.GET);
-            return Execute<Dictionary<string, Team>>(request);
+            return ExecuteAsync<Dictionary<string, Team>>(request);
         }
 
-        public ChannelsOfTeam GetAllChannels(string teamId)
+        public Task<ChannelsOfTeam> GetAllChannelsAsync(string teamId)
         {
             var request = new RestRequest($"teams/{teamId}/channels/", Method.GET);
-            return Execute<ChannelsOfTeam>(request);
+            return ExecuteAsync<ChannelsOfTeam>(request);
         }
 
-        public PostsOfAChannel GetPostsForAChannel(string teamId, string channelId, int offset, int limit)
+        public Task<PostsOfChannel> GetPostsForChannelAsync(string teamId, string channelId, int offset, int limit)
         {
             var request = new RestRequest($"teams/{teamId}/channels/{channelId}/posts/page/{offset}/{limit}", Method.GET);
-            return Execute<PostsOfAChannel>(request);
+            return ExecuteAsync<PostsOfChannel>(request);
         }
     }
 }

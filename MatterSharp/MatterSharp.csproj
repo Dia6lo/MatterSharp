@@ -48,18 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Channel.cs" />
-    <Compile Include="MattermostRestClient.cs" />
-    <Compile Include="MattermostJsonDeserializer.cs" />
-    <Compile Include="Post.cs" />
+    <Compile Include="Models\Channel.cs" />
+    <Compile Include="MattermostClient.cs" />
+    <Compile Include="Models\ChannelType.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostType.cs" />
+    <Compile Include="Models\TeamType.cs" />
+    <Compile Include="Rest\Models\Channel.cs" />
+    <Compile Include="Rest\MattermostRestClient.cs" />
+    <Compile Include="Rest\MattermostJsonDeserializer.cs" />
+    <Compile Include="Rest\Models\ChannelsOfTeam.cs" />
+    <Compile Include="Rest\Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Team.cs" />
+    <Compile Include="Rest\Models\PostsOfChannel.cs" />
+    <Compile Include="Rest\Models\Team.cs" />
+    <Compile Include="Rest\Models\User.cs" />
+    <Compile Include="Models\Team.cs" />
     <Compile Include="UnixEpochConverter.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Models\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

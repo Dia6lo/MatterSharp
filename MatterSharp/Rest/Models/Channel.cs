@@ -1,17 +1,14 @@
-using System;
-using System.Collections.Generic;
-
-namespace MatterSharp
+namespace MatterSharp.Rest.Models
 {
     public class Channel
     {
         public string Id { get; set; }
 
-        public DateTime CreateAt { get; set; }
+        public long CreateAt { get; set; }
 
-        public DateTime UpdateAt { get; set; }
+        public long UpdateAt { get; set; }
 
-        public DateTime DeleteAt { get; set; }
+        public long DeleteAt { get; set; }
 
         public string TeamId { get; set; }
 
@@ -25,17 +22,12 @@ namespace MatterSharp
 
         public string Purpose { get; set; }
 
-        public DateTime LastPostAt { get; set; }
+        public long LastPostAt { get; set; }
 
         public int TotalMsgCount { get; set; }
 
-        public DateTime ExtraUpdateAt { get; set; }
+        public long ExtraUpdateAt { get; set; }
 
         public string CreatorId { get; set; }
-    }
-
-    public class ChannelsOfTeam
-    {
-        public List<Channel> Channels { get; set; }
     }
 }

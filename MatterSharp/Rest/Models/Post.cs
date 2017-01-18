@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace MatterSharp
+namespace MatterSharp.Rest.Models
 {
     public class Post
     {
         public string Id { get; set; }
 
-        public DateTime CreateAt { get; set; }
+        public long CreateAt { get; set; }
 
-        public DateTime UpdateAt { get; set; }
+        public long UpdateAt { get; set; }
 
-        public DateTime DeleteAt { get; set; }
+        public long DeleteAt { get; set; }
 
         public string UserId { get; set; }
 
@@ -34,12 +33,5 @@ namespace MatterSharp
         public List<object> Filenames { get; set; }
 
         public string PendingPostId { get; set; }
-    }
-
-    public class PostsOfAChannel
-    {
-        public List<string> Order { get; set; }
-
-        public Dictionary<string, Post> Posts { get; set; }
     }
 }

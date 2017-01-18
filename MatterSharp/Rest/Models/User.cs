@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace MatterSharp
+﻿namespace MatterSharp.Rest.Models
 {
     public class User
     {
         public string Id { get; set; }
 
-        public DateTime CreateAt { get; set; }
+        public long CreateAt { get; set; }
 
-        public DateTime UpdateAt { get; set; }
+        public long UpdateAt { get; set; }
 
-        public DateTime DeleteAt { get; set; }
+        public long DeleteAt { get; set; }
 
         public string Username { get; set; }
 
@@ -38,9 +36,9 @@ namespace MatterSharp
 
         public object Props { get; set; }
 
-        public DateTime LastPasswordUpdate { get; set; }
+        public long LastPasswordUpdate { get; set; }
 
-        public DateTime LastPictureUpdate { get; set; }
+        public long LastPictureUpdate { get; set; }
 
         public int FailedAttempts { get; set; }
 

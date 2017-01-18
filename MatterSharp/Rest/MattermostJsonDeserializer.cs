@@ -3,13 +3,12 @@ using Newtonsoft.Json.Serialization;
 using RestSharp;
 using RestSharp.Deserializers;
 
-namespace MatterSharp
+namespace MatterSharp.Rest
 {
     public class MattermostJsonDeserializer : IDeserializer
     {
         private static readonly JsonSerializerSettings settings = new JsonSerializerSettings
         {
-            Converters = new [] { new UnixEpochConverter() },
             ContractResolver = new DefaultContractResolver
             {
                 NamingStrategy = new SnakeCaseNamingStrategy()

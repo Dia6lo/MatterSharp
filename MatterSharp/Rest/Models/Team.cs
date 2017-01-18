@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace MatterSharp
+﻿namespace MatterSharp.Rest.Models
 {
     public class Team
     {
         public string Id { get; set; }
 
-        public DateTime CreateAt { get; set; }
+        public long CreateAt { get; set; }
 
-        public DateTime UpdateAt { get; set; }
+        public long UpdateAt { get; set; }
 
-        public DateTime DeleteAt { get; set; }
+        public long DeleteAt { get; set; }
 
         public string DisplayName { get; set; }
 
